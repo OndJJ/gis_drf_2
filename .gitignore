@@ -72,6 +72,8 @@ fabric.properties
 
 venv/
 
+.env
+
 gis_drf_2/.env
 
 db.sqlite3
