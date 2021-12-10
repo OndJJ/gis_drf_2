@@ -13,8 +13,7 @@ from accountapp.serializers import NewModelSerializer
 def hello_world_template(request):
     return render(request, 'accountapp/hello_world_template.html')
 
-
-#로직 처리 부분
+# 로직 처리부분
 @api_view(['GET', 'POST'])
 def hello_world(request):
 
@@ -30,4 +29,7 @@ def hello_world(request):
 
         return Response(serializer.data)
 
-    return Response({"message": "Return Text!"})
+    new_model_list = NewModel.objects.all()
+    serializer = NewModelSerializer(new_model_list, many=True)
+
+    return Response(serializer.data)
