@@ -1,4 +1,3 @@
-
 function send_input() {
     axios.post('/accounts/hello_world/', {
         input_data: document.getElementById('input_data').value,
