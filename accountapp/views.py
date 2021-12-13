@@ -64,6 +64,7 @@ class AccountRetrieveAPIView(RetrieveAPIView):
     permission_classes = [permissions.AllowAny]
     authentication_classes = [TokenAuthentication]
 
+
 #class ListUsers(APIView):
 #    """
 #    View to list all users in the system.
