@@ -17,3 +17,8 @@ class UserSerializer(serializers.ModelSerializer):
         return user
 
 
+class UserWithoutPasswordSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'date_joined']
+
