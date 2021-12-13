@@ -5,7 +5,7 @@ from django.shortcuts import render
 from rest_framework import authentication, permissions
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.decorators import api_view
-from rest_framework.generics import CreateAPIView
+from rest_framework.generics import CreateAPIView, RetrieveAPIView
 from rest_framework.response import Response
 
 
@@ -57,7 +57,7 @@ def AccountLoginView(request):
 
 
 
-def AccountRetrieveAPIView(RetrieveAPIView):
+class AccountRetrieveAPIView(RetrieveAPIView):
     queryset = User.objects.all()
     serializer_class = UserWithoutPasswordSerializer
 
